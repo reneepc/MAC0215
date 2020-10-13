@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+
+\author{Renê Cardozo \\ 
+        rene.cardozo@usp.br}
+
+\title{Módulo Wi-Fi}
+
+\date{}
+
+\begin{document}
+\maketitle
+
+O dispositivo de rede Wi-Fi, WifiNetDevice pode ser instalado em um nó para modelar um controlador Wi-Fi. Cada nó pode
+ter mais de um dispositivo de rede WiFi em diferentes canais e podem estar instalados junto de outros dispositivos
+relacionados a outras tecnologias de comunicação.
+
+\section{Camadas}
+
+\subsection{Camada MAC}
+Existem três tipos de modelo de alto nível para a camada MAC da rede Wi-Fi, os quais são aplicados pela função setType
+do wifiMacHelper. São estes: ns3::ApWifiMac, ns3::StaWifiMac e ns3::AdhocWifiMac. 
+
+\subsection{Camada Física}
+
+A camada física é responsável por modelar a recepção de pacotes e manter registro do consumo de energia.
+
+\end{document}
+

@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+
+\author{Renê Cardozo \\ 
+        rene.cardozo@usp.br}
+
+\title{Módulo de Internet}
+
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Camadas}
+
+\subsection{Camada 3}
+Na camada mais baixa, acima dos dispositivos de rede, temos os protocolos IPv4, IPv6, ARP e outros. A classe
+Ipv4L3Protocol é um exemplo da interface pública da classe Ipv4.
+
+\subsection{Camada 4}
+
+Esta camada especifica os protocolos de transporte, sockets e aplicações. Toda implementação de um protocolo de
+transporte é uma fábrica de sockets. Por exemplo, para criar um socket UDP:
+
+\begin{lstlisting}
+Ptr<Udp> udpSocketFactory = GetNode()->GetObject<Udp>();
+Ptr<Socket> m\_socket = socketFactory->CreateSocket();
+m\_socket->Bind(m\_local\_address);
+...
+\end{lstlisting}
+
+\section{TCP}
+O uso do TCP é geralmente definido na camada de aplicação, informando o tipo de fábrica de socket que deve ser
+utilizada.
+\end{document}
+
