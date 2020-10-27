@@ -1,0 +1,22 @@
+TXPowerStart: 16.0206
+
+TXPowerEnd: 16.0206
+
+MobilityModel: ns3::ConstantPositionMobilityModel
+
+wifi-monitor-005
+Porcentagem de nós que atingiram comunicação: 75.0%
+Delay Médio: 3.56(1.17) ms
+
+wifi-monitor-025
+Porcentagem de nós que atingiram comunicação: 83.33%
+Delay Médio: 21.38(4.565) ms
+
+wifi-monitor-125
+Porcentagem de nós que atingiram comunicação: 29.03%
+Delay Médio: 35.8(7.361) ms
+
+wifi-monitor-625
+Porcentagem de nós que atingiram comunicação: 3.205%
+Delay Médio: 22.3(5.084) ms
+
