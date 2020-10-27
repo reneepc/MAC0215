@@ -1,0 +1,4 @@
+TXPowerStart: 36.0
+TXPowerEnd: 36.0
+MobilityModel: ns3::RandomWalk2DMobilityModel
+

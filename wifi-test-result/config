@@ -1,0 +1,3 @@
+TXPowerStart: 16.0206
+TXPowerEnd: 16.0206
+MobilityModel: ns3::ConstantPositionMobilityModel
