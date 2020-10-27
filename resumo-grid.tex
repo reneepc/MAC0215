@@ -1,0 +1,29 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{placeins}
+
+\author{Renê Cardozo \\ 
+        rene.cardozo@usp.br}
+
+\title{Resumo de implementação dos cenários}
+
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Arranjo da Simulação}
+Nós, representando veículos, foram criados em uma rede wifi Ad-Hoc, sendo posicionados em uma malha com espaçamento de 5
+unidades, verticalmente e horizontalmente. O tamanho máximo das linhas desta malha foi calculado pela quantidade de nós dividida
+por 5.
+
+Em cada nó da rede foi utilizado o modelo de mobilidade ns3::RandomWalk2dMobilityModel com as configurações padrões do
+ns-3.
+
+Neste modelo o primeiro nó da conexão recebia pacotes de todos os outros nós    
+
+\end{document}
+
