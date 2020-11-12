@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{placeins}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+
+\author{Renê Cardozo \\ 
+        rene.cardozo@usp.br}
+
+\title{Tabela QUIC vs ns-QUIC}
+
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{table}[h]
+\centering
+
+\begin{tabular}{|p{3cm}|p{5cm}|p{5cm}|}
+    \hline
+    Característica & QUIC* & nsQUIC \\
+    \hline
+    Versão & Utiliza a versão 16 do Draft da IETF** como base para o módulo, recebendo sua última atualização em junho
+    de 2019. & Realiza a integração direta da implementação do proto-QUIC, o qual encontra-se descontinuado [5] desde 7
+    de maio de 2019. A integração foi realizada com uma versão de 2017 do proto-QUIC. \\
+    \hline
+    Criptografia & Não implementa a stack do TLS, contudo é capaz de simular a negociação de pacotes para o
+    estabelecimento de uma conexão segura. & Possui o código da camada da segurança herdado da implementação real,
+    contudo este código foi suprimido para ser incorporado ao simulador. \\
+    \hline
+    Organização & Modular; Escrito nativamente para o simulador. & Adaptação de uma implementação já existente
+    disponibilizada pela empresa desenvolvedora do protocolo. \\
+    \hline
+    Controle de Congestionamento & Devido a sua característica modular, podem ser utilizados algoritmos já
+    implementados para o TCP em modo legado, o algoritmo padrão do QUIC na data do draft 16, bem como algoritmos
+    desenvolvidos ou modificados pelo usuário. & Há apenas o
+    algoritmo padrão implementado no proto-QUIC, não sendo possível alterá-lo com facilidade. \\
+    \hline
+    Documentação & Possui um artigo descrevendo as funções de cada classe, relações entre as mesmas, fluxo de dados
+    e funcionamento dos métodos. & Possui um artigo que descreve sua incorporação ao simulador, bem como as
+    características do protocolo no proto-QUIC. Porém, por se tratar de uma integração direta, não há uma descrição das
+    funções das classes dentro do simulador. \\
+    \hline
+    Integração & Sua relação com outros módulos do ns-3 é mais clara, uma vez que é possível conhecer as classes que
+    realizam a comunicação entre cada camada. & A relação entre as camadas não é claramente descrita. \\
+    \hline
+\end{tabular}
+\caption{Diferenças entre o módulo QUIC [1,2], implementado nativamente no ns-3 e o módulo nsQUIC [3,4]}
+\end{table}
+
+\FloatBarrier
+
+* Módulo nativo ao simulador disponível no repositório de aplicações do ns-3.
+** Internet Engineering Task Force
+
+\paragraph{Referências}
+
+1. De Biasio, Alvise et al. “A QUIC Implementation for Ns-3.” Proceedings of the 2019 Workshop on ns-3 (2019): n. pag.
+Crossref. Web. \\
+2.ns-3 App Store, disponível em: apps.nsnam.org/app/quic/ \\
+3. CAMARINHA, Diego de Araujo Martinez. Análise de desempenho do nsQUIC: um módulo para smulação do protocolo QUIC.
+2018. Dissertação (Mestrado em Ciência da Computação) - Instituto de Matemática e Estatística, Universidad de São Paulo,
+São Paulo, 2018. doi:10.11606/D.45.2018.tde-16102018-181616. Acesso em: 2020-08-06. \\
+4. COUTO, Yan Soares; CAMARINHA, Diego; BATISTA, Daniel Macêdo. nsQUIC: uma extensao para simulação do protocolo QUIC no
+NS-3. Anais.. Porto Alegre: SBC, 2018.Disponível em:
+http://www.sbrc2018.ufscar.br/wp-content/uploads/2018/04/180520\_1.pdf \\
+5. Repositório google/proto-quic no Github, disponível em: https://github.com/google/proto-quic
+\end{document}
+
